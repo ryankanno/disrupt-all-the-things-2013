@@ -22,14 +22,15 @@ ActiveRecord::Schema.define(:version => 20130427192300) do
     t.datetime "updated_at",                                                                              :null => false
   end
 
-  create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       :limit => 128
-    t.datetime "created_at"
+  create_table "users", :force => true do |t|
+    t.string   "first_name",   :null => false
+    t.string   "last_name",    :null => false
+    t.string   "email"
+    t.string   "provider",     :null => false
+    t.string   "uid",          :null => false
+    t.text     "access_token", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
