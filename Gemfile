@@ -22,6 +22,9 @@ gem 'activerecord-postgis-adapter'
 gem 'pg'
 gem 'active_model_serializers', '~> 0.7.0'
 gem 'acts-as-taggable-on'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'devise'
 
 group :development do
   gem 'lolcommits'
