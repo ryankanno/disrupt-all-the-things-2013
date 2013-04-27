@@ -23,6 +23,7 @@ gem 'pg'
 gem 'active_model_serializers', '~> 0.7.0'
 gem 'acts-as-taggable-on'
 gem 'factory_girl_rails', '~> 4.0'
+gem 'ffaker'
 
 group :development do
   gem 'lolcommits'
