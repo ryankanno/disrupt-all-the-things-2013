@@ -22,6 +22,7 @@ gem 'activerecord-postgis-adapter'
 gem 'pg'
 gem 'active_model_serializers', '~> 0.7.0'
 gem 'acts-as-taggable-on'
+gem 'factory_girl_rails', '~> 4.0'
 
 group :development do
   gem 'lolcommits'
