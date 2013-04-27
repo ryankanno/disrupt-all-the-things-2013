@@ -3,10 +3,17 @@
     <%= f.label :heading %><br />
     <%= f.text_field :heading %>
   </p>
+
   <p>
     <%= f.label :description %><br />
     <%= f.text_area :description, :cols => '100', :rows => '25' %>
   </p>
+
+  <p>
+    <%= f.label :tag_list, "Tags" %><br />
+    <%= f.text_field :tag_list %>
+  </p>
+
   <%= f.fields_for :latlon do |latlon_fields| %>
   <p>
     <%= latlon_fields.label :latitude %><br />
@@ -17,6 +24,7 @@
     <%= latlon_fields.text_field :longitude %>
   </p>
   <% end %>
+
   <p>
     <%= f.file_field 'photo' %>
   </p>
