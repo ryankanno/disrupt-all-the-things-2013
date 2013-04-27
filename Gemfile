@@ -25,6 +25,7 @@ gem 'acts-as-taggable-on'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'devise'
+gem 'factory_girl_rails', '~> 4.0'
 
 group :development do
   gem 'lolcommits'
