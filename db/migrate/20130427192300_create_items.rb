@@ -4,6 +4,8 @@ class CreateItems < ActiveRecord::Migration
       t.string :heading, :default => ""
       t.string :description, :default => ""
       t.string :photo 
+      t.string :status
+      t.datetime :available_at
       t.point  :lonlat, :geographic => true, :spatial => true
       t.timestamps
     end

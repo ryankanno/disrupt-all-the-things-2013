@@ -21,6 +21,7 @@ gem 'fog'
 gem 'activerecord-postgis-adapter'
 gem 'pg'
 gem 'active_model_serializers', '~> 0.7.0'
+gem 'acts-as-taggable-on'
 
 group :development do
   gem 'lolcommits'
