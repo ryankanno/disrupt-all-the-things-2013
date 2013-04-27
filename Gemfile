@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'fog'
 
 group :development do
   gem 'lolcommits'
