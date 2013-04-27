@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20130427192300) do
     t.string   "heading",                                                                 :default => ""
     t.string   "description",                                                             :default => ""
     t.string   "photo"
-    t.spatial  "latlon",      :limit => {:srid=>4326, :type=>"point", :geographic=>true}
+    t.spatial  "lonlat",      :limit => {:srid=>4326, :type=>"point", :geographic=>true}
     t.datetime "created_at",                                                                              :null => false
     t.datetime "updated_at",                                                                              :null => false
   end
