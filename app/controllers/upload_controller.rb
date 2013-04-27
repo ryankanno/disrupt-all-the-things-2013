@@ -1,3 +1,6 @@
 class UploadController < ApplicationController
-  protect_from_forgery
+  def upload 
+    uploader = UploaderUploader.new
+    uploader.store!(my_file)
+  end
 end
