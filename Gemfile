@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'carrierwave'
 gem 'fog'
 
 group :development do
