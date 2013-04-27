@@ -1,3 +1,5 @@
 class Item < ActiveRecord::Base
-  # attr_accessible :title, :body
+  self.rgeo_factory_generator = RGeo::Geos.factory_generator
+  attr_accessible :heading, :description
+  mount_uploader :photo, ItemUploader
 end
