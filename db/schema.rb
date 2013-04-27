@@ -41,4 +41,15 @@ ActiveRecord::Schema.define(:version => 20130427222328) do
     t.string "name"
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "first_name",   :null => false
+    t.string   "last_name",    :null => false
+    t.string   "email"
+    t.string   "provider",     :null => false
+    t.string   "uid",          :null => false
+    t.text     "access_token", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
 end

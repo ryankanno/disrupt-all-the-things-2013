@@ -1,0 +1,5 @@
+<% if current_user %>
+  Signed in as: <%= current_user.first_name %> 
+<% else %>
+  <%= link_to "Sign into FB", user_omniauth_authorize_path(:facebook) %>
+<% end %>
