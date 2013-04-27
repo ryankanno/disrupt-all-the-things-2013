@@ -175,6 +175,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgis-adapter
+  carrierwave
   coffee-rails (~> 3.2.1)
   fog
   jquery-rails

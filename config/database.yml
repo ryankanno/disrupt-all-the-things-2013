@@ -35,4 +35,5 @@ development:
   schema_search_path: public,postgis
   pool: 5
   database: rrr_development
+  username: postgres
   host: localhost
