@@ -6,13 +6,13 @@ class Item < ActiveRecord::Base
 
   acts_as_taggable
 
-  def initialize(params)
-    self.status = ItemStatus.AVAILABLE
+  def initialize
+    @status = ItemStatus::AVAILABLE
     super
   end
 
   def recycled
-    self.status = ItemStatus.RECYCLED
+    self.status = ItemStatus::RECYCLED
     self.save!
   end
 end

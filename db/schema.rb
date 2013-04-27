@@ -14,12 +14,14 @@
 ActiveRecord::Schema.define(:version => 20130427222328) do
 
   create_table "items", :force => true do |t|
-    t.string   "heading",                                                                 :default => ""
-    t.string   "description",                                                             :default => ""
+    t.string   "heading",                                                                  :default => ""
+    t.text     "description",                                                              :default => ""
     t.string   "photo"
-    t.spatial  "lonlat",      :limit => {:srid=>4326, :type=>"point", :geographic=>true}
-    t.datetime "created_at",                                                                              :null => false
-    t.datetime "updated_at",                                                                              :null => false
+    t.string   "status"
+    t.datetime "available_at"
+    t.spatial  "lonlat",       :limit => {:srid=>4326, :type=>"point", :geographic=>true}
+    t.datetime "created_at",                                                                               :null => false
+    t.datetime "updated_at",                                                                               :null => false
   end
 
   create_table "taggings", :force => true do |t|
