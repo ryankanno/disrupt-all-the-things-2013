@@ -20,6 +20,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'activerecord-postgis-adapter'
 gem 'pg'
+gem 'active_model_serializers', '~> 0.7.0'
 
 group :development do
   gem 'lolcommits'

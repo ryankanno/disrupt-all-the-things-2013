@@ -8,6 +8,8 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @item = Item.new(params[:item].except(:latlon))
+    @item.save
   end
 
   def show
