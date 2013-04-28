@@ -8,14 +8,14 @@ maxLng = -75
 
 factory = Item.rgeo_factory_for_column(:lonlat)
 
-Parallel.map(1..1000, :in_processes => 8) do |one|
+Parallel.map(1..50, :in_processes => 8) do |one|
   ActiveRecord::Base.connection.reconnect!
   rng = Random.new
   lat = minLat + rng.rand * (maxLat - minLat)
   lng = minLng + rng.rand * (maxLng - minLng)
   item = Item.new
   item.heading = Faker::Product.product
-  item.description = Faker::HipsterIpsum.words
+  item.description = Faker::HipsterIpsum.words.join
   item.lonlat = factory.point(lng, lat)
   item.tag_list = (0..10).collect{ Faker::Product.product }.join(',')
   item.save
