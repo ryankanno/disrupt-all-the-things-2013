@@ -7,6 +7,8 @@ class Item < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :tags
 
+  has_many :user_item_statuses  
+
   after_initialize :init_values
 
   scope :nearby_to,
@@ -25,4 +27,7 @@ class Item < ActiveRecord::Base
     self.save!
   end
 
+  def user_status=(status)
+    @user_status = status
+  end
 end
