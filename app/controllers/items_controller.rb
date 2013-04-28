@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.nearby_to(params[:latitude], 
+                            params[:longitude],
+                            params[:distance] || 200000)
+    render :json => @items
   end
 
   def new
@@ -8,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    factory = RGeo::Cartesian.factory
+    factory = Item.rgeo_factory_for_column(:lonlat)
     @item = Item.new(params[:item].except(:latlon))
     @item.lonlat = factory.point(
       params[:item][:latlon][:longitude],
