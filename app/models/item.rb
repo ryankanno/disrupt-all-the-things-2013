@@ -7,16 +7,17 @@ class Item < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :tags
 
+  after_initialize :init_values
+
   scope :nearby_to,
     lambda { |latitude, longitude, max_distance|
       where("ST_DWithin(lonlat, ?, ?)", 
             self.rgeo_factory_for_column(:lonlat).point(longitude, latitude), max_distance)
     }
 
-  def initialize(params = {})
-    @status = ItemStatus::AVAILABLE
-    @uid = Digest::MD5.hexdigest(params[:heading] || "")
-    super
+  def init_values
+    self.status = ItemStatus::AVAILABLE
+    self.uid = Digest::MD5.hexdigest((Time.now.to_i + Random.rand(999999999)).to_s)
   end
 
   def recycled
