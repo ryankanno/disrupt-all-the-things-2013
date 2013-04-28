@@ -14,7 +14,7 @@ class Item < ActiveRecord::Base
   scope :nearby_to,
     lambda { |latitude, longitude, max_distance|
       where("ST_DWithin(lonlat, ?, ?)", 
-            self.rgeo_factory_for_column(:lonlat).point(longitude, latitude), max_distance)
+            Item.rgeo_factory_for_column(:lonlat).point(longitude, latitude), max_distance)
     }
 
   def init_values
