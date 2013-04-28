@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 include FactoryGirl::Syntax::Methods
 require 'ffaker'
 
@@ -5,8 +7,7 @@ factory = Item.rgeo_factory_for_column(:lonlat)
 
 item3 = Item.new
 item3.heading = "Ceramic Heater with Adjustable Thermostat w/ FREE Extension Cord"
-item3.description = "Lasko's #754200 heater offers powerful heat in a small package suitable for under a desk or even table-top.
-Adjustable Thermostat Control for Personalized Comfort
+item3.description = "Lasko's #754200 heater offers powerful heat in a small package suitable for under a desk or even table-top. Adjustable Thermostat Control for Personalized Comfort
 Built-In Safety Features
 1500 Watts of Comforting Warmth
 3 Quiet Settings: High Heat, Low Heat and Fan Only
