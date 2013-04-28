@@ -59,10 +59,5 @@ module RrrServer
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-
-    def config.database_configuration
-      parsed = super
-      parsed.each_value { |config| config['adapter'] = 'postgis' }
-    end
   end
 end
