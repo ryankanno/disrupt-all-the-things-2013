@@ -20,3 +20,5 @@ Parallel.map(1..1000, :in_processes => 8) do |one|
   item.tag_list = (0..10).collect{ Faker::Product.product }.join(',')
   item.save
 end
+
+User.create_with_access_token("BAAHPZAwZB5oJgBAOySvYzslsfXnJlXb7t6X2g5xRGbJz2TudCaaMAvNu5TpKj8IZAP5fWKeCnW0oYsPZACy8dqI6iS8wfMN1gTC7yiaAZAIGoMjr0k67VKPJuJuPqQhgWKaBjv0DgHVZBNhxT9sggwZBP3IoJm0zRXwQhhA5gukwRGWkmmLe9cZAajdcACZCLkBcpT5t8rRArSIbspSGmMZBxL")
