@@ -61,3 +61,8 @@ module RrrServer
     config.assets.version = '1.0'
   end
 end
+
+def config.database_configuration
+  parsed = super
+  parsed.each_value { |config| config['adapter'] = 'postgis' }
+end
