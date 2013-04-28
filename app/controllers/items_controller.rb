@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     @items = Item.nearby_to(params[:latitude], 
                             params[:longitude],
                             params[:distance] || 200000)
-    render :json => @items
+    respond_with @items
   end
 
   def new
@@ -17,7 +17,12 @@ class ItemsController < ApplicationController
     @item.lonlat = factory.point(
       params[:item][:latlon][:longitude],
       params[:item][:latlon][:latitude]) 
-    @item.save
+
+    if @item.save
+      render json: @item
+    else
+      render(json: {}, status: :internal_server_error)
+    end
   end
 
   def show
