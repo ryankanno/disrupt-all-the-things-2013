@@ -4,13 +4,14 @@ CarrierWave.configure do |config|
     :provider               => 'AWS',
     :aws_access_key_id      => ENV['ACCESS_KEY'],
     :aws_secret_access_key  => ENV['SECRET_ACCESS_KEY'],
-    :region                 => 'us-west-1'
+    :region                 => 'us-west-1',
+    :host => "s3.amazonaws.com",
   }
  
-  if Rails.env.test? || Rails.env.cucumber?
+  if Rails.env.development? || Rails.env.cucumber?
     config.storage = :file
     config.enable_processing = false
-    config.root = "#{Rails.root}/tmp"
+    config.root = "#{Rails.root}/public"
   else
     config.storage = :fog
   end
