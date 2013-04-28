@@ -27,6 +27,7 @@ gem 'ffaker'
 gem 'parallel'
 gem 'koala'
 gem 'paper_trail'
+gem 'twilio-ruby'
 
 group :development do
   gem 'lolcommits'
