@@ -8,9 +8,9 @@ class Item < ActiveRecord::Base
   acts_as_taggable_on :tags
 
   scope :nearby_to,
-    lambda { |item, max_distance|
-      where("ST_DWithin(lonlat, ?, ?) AND id != ?", 
-            item.lonlat, max_distance, item.id)
+    lambda { |latitude, longitude, max_distance|
+      where("ST_DWithin(lonlat, ?, ?)", 
+            self.rgeo_factory_for_column(:lonlat).point(longitude, latitude), max_distance)
     }
 
   def initialize

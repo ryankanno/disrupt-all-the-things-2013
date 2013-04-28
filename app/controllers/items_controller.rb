@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.nearby_to(params[:latitude], 
+                            params[:longitude],
+                            params[:distance] || 200000)
+    render :json => @items
   end
 
   def new
