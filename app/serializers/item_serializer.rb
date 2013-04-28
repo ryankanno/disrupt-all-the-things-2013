@@ -16,4 +16,8 @@ class ItemSerializer < ActiveModel::Serializer
   def tags
     object.tag_list
   end
+
+  def user_status
+    object.user_status
+  end
 end

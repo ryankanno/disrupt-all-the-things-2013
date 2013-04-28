@@ -1,3 +1,4 @@
 class UserItemStatus < ActiveRecord::Base
-  # attr_accessible :title, :body
+  INTERESTED = "interested"
+  OMW = "on my way"
 end

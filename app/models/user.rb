@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :provider, :uid, :access_token, :profile_picture, :phone_number
 
+  has_many :user_item_statuses
+
   def self.create_with_access_token(access_token)
     begin
       User.where(access_token: access_token).first.tap do |user|

@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @item.user_status = UserItemStatus.where(:user_id => params[:id], :user_id => current_user.id)
     render :json => @item
   end
 
