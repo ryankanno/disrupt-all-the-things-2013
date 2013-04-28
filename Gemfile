@@ -28,6 +28,7 @@ gem 'devise'
 gem 'factory_girl_rails', '~> 4.0'
 gem 'ffaker'
 gem 'parallel'
+gem 'papertrail'
 
 group :development do
   gem 'lolcommits'
