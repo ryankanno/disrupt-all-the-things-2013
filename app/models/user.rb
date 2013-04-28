@@ -1,20 +1,23 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :provider, :uid, :access_token
-  devise :omniauthable, omniauth_providers: [:facebook]
 
-  def self.find_for_facebook_oauth(auth)
-    uid = auth["uid"]
-    provider = auth["provider"]
-    user = User.where(:provider => provider, :uid => uid).first
+  def self.create_with_access_token(access_token)
+    begin
+      User.where(access_token: access_token).first.tap do |user|
+        unless user
+          graph = Koala::Facebook::API.new(access_token)
+          me = graph.get_object("me")
 
-    unless user
-      user = User.create!(first_name: auth[:extra][:raw_info][:first_name],
-                          last_name: auth[:extra][:raw_info][:last_name],  
-                          provider: provider,
-                          uid: uid,
-                          email: auth[:info][:email],
-                          access_token: auth[:credentials][:token])
+          create(first_name: me["first_name"],
+                 last_name: me["last_name"],
+                 provider: "facebook",
+                 uid: id,
+                 email: me["email"],
+                 access_token: access_token)
+        end
+      end
+    rescue Koala::Facebook::AuthenticationError
+      false
     end
-    user
   end
 end
