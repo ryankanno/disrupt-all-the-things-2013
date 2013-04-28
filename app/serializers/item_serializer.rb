@@ -18,6 +18,6 @@ class ItemSerializer < ActiveModel::Serializer
   end
 
   def user_status
-    object.user_status
+    raise params.inspect
   end
 end
