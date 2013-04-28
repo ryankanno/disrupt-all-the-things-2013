@@ -13,7 +13,7 @@ class Item < ActiveRecord::Base
             self.rgeo_factory_for_column(:lonlat).point(longitude, latitude), max_distance)
     }
 
-  def initialize(params)
+  def initialize(params = {})
     @status = ItemStatus::AVAILABLE
     super
   end
