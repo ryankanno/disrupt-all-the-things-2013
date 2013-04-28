@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     item_status = UserItemStatus.where(item_id: params[:id], user_id: current_user.id).first
     unless item_status
       item_status = UserItemStatus.new(:item_id => params[:id])
-      current_user.item_statuses << item_status
+      current_user.user_item_statuses << item_status
     end
 
     render :json => item_status, root: false
