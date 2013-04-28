@@ -37,17 +37,6 @@ item6.lonlat = factory.point(-73.991332, 40.752735)
 item6.tag_list = "table, furniture"
 item6.save
 
-item7 = Item.new
-item7.heading = "Wooden Bookshelf Furniture"
-item7.description = "Spotted this on East 38st just outside the FDR Drive. It has a nice glossy finish to it. overall in good shape just dusty. 
-I will not be aware if this item is still available so if someone goes and gets it or it's not there anymore, send me a message to take this down.
-
-Shelf is roughly 5 feet high and 2 feet wide."
-item7.photo = open("http://images.craigslist.org/3E33Nb3H35O05G65F4d4r6f347188b41713c5.jpg")
-item7.lonlat = factory.point(-73.985195, 40.752215)
-item7.tag_list = "bookshelf, furniture"
-item7.save
-
 item8 = Item.new
 item8.heading = "Free computer desk"
 item8.description = "Free desk. Decent condition. Would probably need a truck or van to take it unless you can break it down. I'm not sure how. Can only separate it into 2 parts right now top and bottom. Any questions feel free to reach out."
@@ -87,14 +76,6 @@ item12.photo = open("http://images.craigslist.org/3Ea3Lb3H75I65F85J9d4r78f47887c
 item12.lonlat = factory.point(-73.996611, 40.741795)
 item12.tag_list = "table" 
 item12.save
-
-item13 = Item.new
-item13.heading = "Free Water Dispenser" 
-item13.description = "Puro water heater. Will dispense hot or room temp water from 5 gallon bottles. Note: water heater is working; cooler component is not but machine will dispense water (at temperature of bottles) from the cold water side."
-item13.photo = open("http://images.craigslist.org/3Ka3Ld3J85Nc5Jc5M1d4racbe4e8821b1114f.jpg")
-item13.lonlat = factory.point(-74.00058, 40.73986)
-item13.tag_list = "water, dispenser" 
-item13.save
 
 item14 = Item.new
 item14.heading = "Leather sofa - needs work" 
@@ -153,7 +134,7 @@ item20 = Item.new
 item20.heading = "Xerox 8400 Printer Free"
 item20.description = "If you don't know what this is, you probably don't want it.
 
-I picked up this printer for free from a law firm that was moving. I was told that it worked when removed from service, and that the firm had kept it as a spare after upgrading, and it sat in their printer room for a few years. When I got it home I discovered it had no toner cartridges and the front door was jammed. I unjammed the door, but it won' t latch and it is closed with a piece of tape. It powers up and says "no toner" but I was reluctant to spend a hundred bucks on toner cartridges just to find out something else, like an imaging unit, is toast. (I had a 6250, so I know all about Xerox imaging units.) Also, the photo is generic, not from this one.
+I picked up this printer for free from a law firm that was moving. I was told that it worked when removed from service, and that the firm had kept it as a spare after upgrading, and it sat in their printer room for a few years. When I got it home I discovered it had no toner cartridges and the front door was jammed. I unjammed the door, but it won' t latch and it is closed with a piece of tape. It powers up and says no toner but I was reluctant to spend a hundred bucks on toner cartridges just to find out something else, like an imaging unit, is toast. (I had a 6250, so I know all about Xerox imaging units.) Also, the photo is generic, not from this one.
 
 It looks like a plastic piece needs to be moved for the door to close, but I'm not motivated to download the service manual and fix it, since I'm not using it.
 

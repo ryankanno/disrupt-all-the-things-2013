@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
   }
  
   if Rails.env.development? || Rails.env.cucumber?
-    config.storage = :file
+    config.storage = :fog
     config.enable_processing = false
     config.root = "#{Rails.root}/public"
   else
