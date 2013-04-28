@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    factory = RGeo::Cartesian.factory
+    factory = Item.rgeo_factory_for_column(:lonlat)
     @item = Item.new(params[:item].except(:latlon))
     @item.lonlat = factory.point(
       params[:item][:latlon][:longitude],

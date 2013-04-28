@@ -6,7 +6,7 @@ maxLat = 35.492151803709525
 minLng = -65.99415772
 maxLng = -75
 
-factory = RGeo::Cartesian.factory
+factory = Item.rgeo_factory_for_column(:lonlat)
 
 Parallel.map(1..1000, :in_processes => 8) do |one|
   ActiveRecord::Base.connection.reconnect!
