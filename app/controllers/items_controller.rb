@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     @items = Item.nearby_to(params[:latitude], 
                             params[:longitude],
                             params[:distance] || 200000)
-    respond_with @items
+    render json: @items
   end
 
   def new
