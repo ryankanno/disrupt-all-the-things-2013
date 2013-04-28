@@ -7,6 +7,12 @@ class Item < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :tags
 
+  scope :nearby_to,
+    lambda { |item, max_distance|
+      where("ST_DWithin(lonlat, ?, ?) AND id != ?", 
+            item.lonlat, max_distance, item.id)
+    }
+
   def initialize
     @status = ItemStatus::AVAILABLE
     super
@@ -16,4 +22,5 @@ class Item < ActiveRecord::Base
     self.status = ItemStatus::RECYCLED
     self.save!
   end
+
 end
