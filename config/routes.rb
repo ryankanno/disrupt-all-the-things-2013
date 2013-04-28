@@ -4,4 +4,5 @@ RrrServer::Application.routes.draw do
   resource :user_item_status, :only => [:update]
   
   resources :items, :only => [:index, :create, :show]
+  resources :map, :only => [:index]
 end
