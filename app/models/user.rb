@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :provider, :uid, :access_token
+  attr_accessible :first_name, :last_name, :email, :provider, :uid, :access_token, :profile_picture, :phone_number
 
   def self.create_with_access_token(access_token)
     begin
@@ -11,8 +11,9 @@ class User < ActiveRecord::Base
           create(first_name: me["first_name"],
                  last_name: me["last_name"],
                  provider: "facebook",
-                 uid: id,
+                 uid: me["id"],
                  email: me["email"],
+                 profile_picture: graph.get_picture(me["id"]),
                  access_token: access_token)
         end
       end

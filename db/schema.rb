@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427222328) do
+ActiveRecord::Schema.define(:version => 20130428015221) do
 
   create_table "items", :force => true do |t|
     t.string   "heading",                                                                  :default => ""
@@ -42,14 +42,16 @@ ActiveRecord::Schema.define(:version => 20130427222328) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "first_name",   :null => false
-    t.string   "last_name",    :null => false
+    t.string   "first_name",      :null => false
+    t.string   "last_name",       :null => false
     t.string   "email"
-    t.string   "provider",     :null => false
-    t.string   "uid",          :null => false
-    t.text     "access_token", :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "provider",        :null => false
+    t.string   "uid",             :null => false
+    t.text     "access_token",    :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "profile_picture"
+    t.string   "phone_number"
   end
 
 end
