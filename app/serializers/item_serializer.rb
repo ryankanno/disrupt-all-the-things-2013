@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :heading, :description, :photo_url, :latitude, :longitude
+  attributes :id, :heading, :description, :photo_url, :latitude, :longitude, :tags
 
   def photo_url
     "#{object.photo.url}"
@@ -11,5 +11,9 @@ class ItemSerializer < ActiveModel::Serializer
 
   def longitude
     "#{object.lonlat.x}"
+  end
+
+  def tags
+    object.tag_list
   end
 end

@@ -5,6 +5,7 @@ class Item < ActiveRecord::Base
   mount_uploader :photo, ItemUploader
 
   acts_as_taggable
+  acts_as_taggable_on :tags
 
   def initialize
     @status = ItemStatus::AVAILABLE
